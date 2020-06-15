@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <style>
+        #invalid{
+            
+            color:blue;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+    Username:<input type="text" id="te" ><br>
+    <p id="invalid" >Invaild Username</p><br>
+    <input type="Button"  onclick="sub()" value="Confirm">
+
+    <script>
+
+        function sub(){
+
+            var username= document.getElementById("te").value;
+            
+            
+            var regx  = /E00/;
+
+            if(regx.test(username))
+            
+            {
+                
+                document.getElementById("invalid").style.visibility="hidden";
+            }
+            else
+            {
+
+            
+                document.getElementById("invalid").style.visibility="visible";
+            }
+
+
+
+
+        }
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>

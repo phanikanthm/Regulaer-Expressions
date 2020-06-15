@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <style>
+        #invalid{
+            visibility: hidden;
+            
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+    Email Id::<input  type="email" id="te" ><br>
+    <p id="invalid" >Invaild Username</p><br>
+    <input type="Button"  onclick="sub()" value="Confirm">
+
+    <script>
+
+        function sub(){
+                    event.preventDefault();
+            var username= document.getElementById("te").value;
+            
+            
+           // var regx  = /([A-Z][a-z][a-z][a-z][a-z][a-z][0-9])@[a-z][a-z][a-z][a-z][a-z].[a-z][a-z][a-z]/;
+
+
+            var regx =/^[A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{1,30}\S/; 
+            if(regx.test(username))
+            
+            {
+                document.getElementById("invalid").innerHTML="Valid";  
+                document.getElementById("invalid").style.visibility="Visible";
+            }
+            else
+            {
+
+                document.getElementById("invalid").innerHTML="Invalid";
+                document.getElementById("invalid").style.visibility="visible";
+            }
+
+
+
+
+        }
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+
+
+<head>
+    <style>
+        #visible{
+            visibility:hidden;
+        }
+        #visible1{
+            visibility:hidden;
+        }
+        #visible2{
+            visibility:hidden;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+    Email Id:<input id="eid" type="text"><br><br>
+    Password:<input  id="pw" type="password"><br><br>
+    Confirm Password:<input id="cpw" type="password"><br><br>
+    <button  onclick="sub()" >Submit</button>
+    <p id="visible">valid</p>
+    <p id="visible1">Password</p>
+    <p id="visible2">Confirm Password</p>
+
+    
+
+    <script>
+        function sub(){
+            var emid = document.getElementById("eid").value;
+            var rege = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
+            
+            if(rege.test(emid))
+            
+            {
+                document.getElementById("visible").innerHTML="Valid EmailId";
+                document.getElementById("visible").style.visibility="visible";
+                document.getElementById("visible").style.color="green";
+
+            }
+            else
+            {
+                document.getElementById("visible").innerHTML="InValid EmailId";
+                document.getElementById("visible").style.visibility="visible";
+                document.getElementById("visible").style.color="red";
+            }
+
+            var pwo = document.getElementById("pw").value;
+            
+            var regp=/^([a-zA-Z0-9]+)$/;
+            if(regp.test(pwo))
+            {
+                
+                document.getElementById("visible1").innerHTML="Valid Password";
+                document.getElementById("visible1").style.visibility="visible";
+                document.getElementById("visible1").style.color="green";
+            
+            }else{
+                
+                document.getElementById("visible1").innerHTML="InValid Password";
+                document.getElementById("visible1").style.visibility="visible";
+                document.getElementById("visible1").style.color="red";
+            }
+            
+            var cpwo = document.getElementById("cpw").value;
+
+            var regcp=/^([a-zA-Z0-9]+)$/;
+            if(regcp.test(cpwo))
+            {
+                
+                document.getElementById("visible2").innerHTML="Valid Confirm Password";
+                document.getElementById("visible2").style.visibility="visible";
+                document.getElementById("visible2").style.color="green";
+                
+            }else{
+                
+                document.getElementById("visible2").innerHTML="Invalid  Confirm Password";
+                document.getElementById("visible2").style.visibility="visible";
+                document.getElementById("visible2").style.color="red";
+            }
+
+        
+            
+            
+            
+
+
+
+        }
+    
+    
+    </script>
+
+
+</body>
+</html>

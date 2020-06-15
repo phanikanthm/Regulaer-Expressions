@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        #invalid{
+            visibility:hidden;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+    Password:<input  type="text" id="te" ><br>
+    <p id="invalid" >InValid</p><br>
+    <input type="Button"  onclick="sub()" value="Confirm">
+
+    <script>
+
+        function sub(){
+            event.preventDefault();
+            var username= document.getElementById("te").value;
+            
+            
+            var regx  = /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$}%^&*-=_+{;':"<>?/.,])[\w@#$}%^&*-=_+{;':"<>?/.,]{4,40}$/;
+
+            if(regx.test(username))
+            
+            {
+                document.getElementById("invalid").innerHTML="Valid";
+                document.getElementById("invalid").style.visibility="visible";
+                document.getElementById("invalid").style.color="green";
+            }
+            else
+            {
+
+                document.getElementById("invalid").innerHTML="InValid";
+                document.getElementById("invalid").style.visibility="visible";
+                document.getElementById("invalid").style.color="red";
+            }
+
+
+
+
+        }
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>

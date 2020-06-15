@@ -1,0 +1,43 @@
+<html>
+
+<head>
+
+
+</head>
+
+
+<body>
+
+    Email Id:<input id="leid" type="text"><br><br>
+    Password:<input  id="lpw" type="password"><br><br>
+    <button  onclick="log()" >Submit</button>
+
+    <script>
+        function log(){
+
+            var lemo = document.getElementById("leid").value;
+            var lpwo = document.getElementById("lpw").value;
+
+            var pass = JSON.parse(localStorage.getItem('ar'));
+
+            if(lemo == pass.eid && lpwo == pass.pw){
+                alert("success");
+
+
+            }
+            else{
+
+                alert("unsuccess");
+            }
+
+
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

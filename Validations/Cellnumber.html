@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <style>
+        #invalid{
+            visibility: hidden;
+            color:blue;
+        }
+    
+    </style>
+
+
+</head>
+
+<body>
+
+
+    Cell Number:<input  type="number" id="te" ><br>
+    <p id="invalid" >Vaild</p><br>
+    <input type="Button"  onclick="sub()" value="Confirm">
+
+    <script>
+
+        function sub(){
+                event.preventDefault();
+            var username= document.getElementById("te").value;
+            
+            
+            var regx  = /^[7-9]\d{9}$/;
+
+            if(regx.test(username))
+            
+            {
+                
+                document.getElementById("invalid").style.visibility="visible";
+                document.getElementById("invalid").style.color="green";
+            }
+            else
+            {
+                document.getElementById("invalid").innerHTML="Invalid";
+                document.getElementById("invalid").style.color="red";
+                document.getElementById("invalid").style.visibility="visible";
+            }
+
+
+
+
+        }
+    
+    
+    </script>
+
+
+
+
+
+</body>
+</html>
